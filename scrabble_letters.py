@@ -3,7 +3,7 @@ Practice with the dictionary built-in data type.
 
 File: scrabble_letters.py
 Initial developers: COMP 801 instructors
-Developer:
+Developer: Nalin
 """
 
 
@@ -74,9 +74,6 @@ class ScrabbleLetters:
         'A' to 'Z', 'a' to 'z' or '_' (blank). 
         :return: True if the letter frequency was reduced, False otherwise.  
         """
-        
-
-
 
     def get_freq(self, letters: str) -> dict:
         """
