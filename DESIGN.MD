@@ -44,3 +44,15 @@
     - If  the `letter` is in the dictionary `self.scrabbe_letters` then
         - Assign the first element in the list, associated to the `key`, `letter` in the dictionary `self.scrabble_letters` to the `key`, `letter` in the dictionary `count`.
 - Return the dictionary `count`.
+
+
+## Design of `get_points()`
+
+- Define a method `get_points()` with two parameters.
+- The first parameter being `self` of datatype class instance and the second being `word` of datatype `string`.
+- Initialize the local variable `points` of datatype `int` with 0.
+- Use `for` loop to iterate through the srting `word` with the iterator variable `letter` of datatype `string`.
+    - Update the letter by converting it into lower case using `lower()` method.
+    - If `letter` is in the dictionary `self.scrabble_letters` then
+        - Add the second element in the list, associated to the `key`, `letter` in the dictionary `self.scrabble_letters` to the variable `points` and  assign this to `points`.
+Return `points`.
