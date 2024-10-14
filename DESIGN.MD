@@ -16,3 +16,20 @@
     - If `letter` is the string `"balnk"` then
         - Assign an string with a blank space to `letter`.
     - Assign the list of `frequency` and `count`, where their datatypes ae typecasted to `int`, to the key `letter` in the  dictionary `self.scribble_letters`.
+
+
+## Design of `reduce_frequency()`
+
+- Define a method `reduce_frequency` with two parameters.
+- The first parameter being `self` of datatype class instance and the second being `letter` of datatype `string`.
+- If the `letter` is a string called `blank` then assign a string containing a blank space to `letter`.
+- Update the string `letter` by using `.lower()` method on it.
+- If the `letter` is in the dictionary `self.scrabble_letters` then
+    - Define the local variables `frequency`, `points` of datatype `int`.
+    - Assign the `value` of the `key`, `letter` in the dictionary `self.scrabble_letters` to the local variables `frequency`, `points`.
+    - If the `frequency` is greater than 0 then
+        - Reduce the value of the first element in the `list` associated as `value` to the `key`, `letter` in the dictionary `self.scrabble_letters`.
+        - Print the updated dictionary `self.scrabble_letters`.
+        - Return `True`.
+    - Return `False`.
+
