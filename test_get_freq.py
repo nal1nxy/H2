@@ -13,7 +13,7 @@ def test_get_freq_1():
     """
     word = "a c"
     test_word = ScrabbleLetters(word)
-    actual = test_word.scrabble_letters
+    actual = test_word.get_freq(word)
     expected = {'a': 9, ' ': 0, 'c': 2}
     assert actual == expected
 
@@ -24,7 +24,7 @@ def test_get_freq_2():
     """
     word = "ABC"
     test_word = ScrabbleLetters(word)
-    actual = test_word.scrabble_letters
+    actual = test_word.get_freq(word)
     expected = {'a': 9, 'b': 2, 'c': 2}
     assert actual == expected
 
