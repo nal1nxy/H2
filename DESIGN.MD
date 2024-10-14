@@ -33,3 +33,14 @@
         - Return `True`.
     - Return `False`.
 
+
+## Design of `get_freq()`
+
+- Define a method `get_freq` with two parameters.
+- The first parameter being `self` of datatype class instance and the second being `letters` of datatype `string`.
+- Initialize the local variable `count` with an empty dictionary.
+- Use the `for` loop to iterate through the sring `letters` with the iterator variable as `letter` of datatype `string`.
+    - Update the letter by converting it into lower case using `lower()` method.
+    - If  the `letter` is in the dictionary `self.scrabbe_letters` then
+        - Assign the first element in the list, associated to the `key`, `letter` in the dictionary `self.scrabble_letters` to the `key`, `letter` in the dictionary `count`.
+- Return the dictionary `count`.
