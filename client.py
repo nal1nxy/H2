@@ -18,18 +18,9 @@ def main():
 
     scrabble = ScrabbleLetters(letters_file)
     print(scrabble.scrabble_letters)
-    word = "help"
-
-    freq = scrabble.get_freq(word)
-    points = scrabble.get_points(word)
-
-    print(f"{freq}")
-    print(f"{points}")
-
-    scrabble.reduce_freq(word)
-    freq = scrabble.get_freq(word)
-
-    print(f"{freq}")
+    letter = " "
+    print(scrabble.reduce_freqeuncy(letter))
+    print(scrabble.reduce_freqeuncy(letter))
 
 
 def easy():
@@ -38,9 +29,9 @@ def easy():
     """
     easy_file = "sample.txt"
 
-    file_object = open(file=easy_file, encoding='UTF-8', mode='r')
+    with open(file=easy_file, encoding='UTF-8', mode='r') as file_object:
 
-    line = file_object.readline()
+        line = file_object.readline()
 
     while line:
         line = line.strip()
@@ -52,15 +43,9 @@ def other():
     """
     Read the content of the file iterating throught the file object directly.
     """
-    scrabble_file = "scrabble.csv"
-
-    letters_file = open(file=scrabble_file, encoding='UTF-8', mode='r')
-
-    for line in letters_file:
-        print(line)
+    #
 
 
 if __name__ == "__main__":
     main()
     other()
-    easy()
