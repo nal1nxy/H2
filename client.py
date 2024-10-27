@@ -21,6 +21,8 @@ def main():
     letter = " "
     print(scrabble.reduce_freqeuncy(letter))
     print(scrabble.reduce_freqeuncy(letter))
+    letters = "ABC"
+    print(scrabble.get_freq(letters))
 
 
 def easy():

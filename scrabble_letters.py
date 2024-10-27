@@ -98,7 +98,12 @@ class ScrabbleLetters:
             The input "abc" will return {'a': 9, 'b' : 2, 'c': 2 }
         """
 
-        return {}
+        count = {}
+        for letter in letters:
+            letter = letter.lower()
+            if letter in self.scrabble_letters:
+                count[letter] = self.scrabble_letters[letter][0]
+        return count
 
     def get_points(self, word: str) -> int:
         """
