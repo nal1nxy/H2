@@ -6,6 +6,7 @@ File: client.py
 Initial developers: COMP 801 instructors
 Developer: Nalin
 """
+
 from scrabble_letters import ScrabbleLetters
 
 
@@ -20,9 +21,11 @@ def main():
     print(scrabble.scrabble_letters)
     letter = " "
     print(scrabble.reduce_freqeuncy(letter))
-    print(scrabble.reduce_freqeuncy(letter))
+    # print(scrabble.reduce_freqeuncy(letter))
     letters = "ABC"
     print(scrabble.get_freq(letters))
+    word = "homework start"
+    print(scrabble.get_points(word))
 
 
 def easy():
@@ -31,7 +34,7 @@ def easy():
     """
     easy_file = "sample.txt"
 
-    with open(file=easy_file, encoding='UTF-8', mode='r') as file_object:
+    with open(file=easy_file, encoding="UTF-8", mode="r") as file_object:
 
         line = file_object.readline()
 

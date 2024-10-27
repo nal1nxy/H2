@@ -60,15 +60,15 @@ class ScrabbleLetters:
         """
         self.scrabble_letters = {}
 
-        letters_file = open(file=scrabble_file, encoding="UTF-8", mode="r")
-        list_of_lines = letters_file.readlines()
-        for line in list_of_lines:
-            if line == list_of_lines[0]:
-                continue
-            letter, frequency, points = line.split(',')
-            if letter == "blank":
-                letter = " "
-            self.scrabble_letters[letter] = [int(frequency), int(points)]
+        with open(file=scrabble_file, encoding="UTF-8", mode="r") as lfile:
+            list_of_lines = lfile.readlines()
+            for line in list_of_lines:
+                if line == list_of_lines[0]:
+                    continue
+                letter, frequency, points = line.split(",")
+                if letter == "blank":
+                    letter = " "
+                self.scrabble_letters[letter] = [int(frequency), int(points)]
 
     def reduce_freqeuncy(self, letter: str) -> bool:
         """
@@ -79,16 +79,17 @@ class ScrabbleLetters:
         'A' to 'Z', 'a' to 'z' or '_' (blank).
         :return: True if the letter frequency was reduced, False otherwise.
         """
-        if letter == 'blank':
-            letter = ' '
+        if letter == "blank":
+            letter = " "
         letter = letter.lower()
         if letter in self.scrabble_letters:
-            frequency, points = self.scrabble_letters[letter]
+            frequency = self.scrabble_letters[letter][0]
             if frequency > 0:
                 self.scrabble_letters[letter][0] -= 1
                 print(self.scrabble_letters)
                 return True
             return False
+        return False
 
     def get_freq(self, letters: str) -> dict:
         """
@@ -111,4 +112,9 @@ class ScrabbleLetters:
         :return: An integer containing the total points for the word.
         """
 
-        return 0
+        points = 0
+        for letter in word:
+            letter = letter.lower()
+            if letter in self.scrabble_letters:
+                points = points + self.scrabble_letters[letter][1]
+        return points
