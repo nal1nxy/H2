@@ -61,18 +61,23 @@ class ScrabbleLetters:
         self.scrabble_letters = {}
 
         letters_file = open(file=scrabble_file, encoding="UTF-8", mode="r")
-
-        for line in letters_file:
-            print(line)
+        list_of_lines = letters_file.readlines()
+        for line in list_of_lines:
+            if line == list_of_lines[0]:
+                continue
+            letter, frequency, points = line.split(',')
+            if letter == "blank":
+                letter = " "
+            self.scrabble_letters[letter] = [int(frequency), int(points)]
 
     def reduce_freqeuncy(self, letter: str) -> bool:
         """
-        Reduces the frequency of the given letter if the letter frequency is 
-        greater than zero. 
+        Reduces the frequency of the given letter if the letter frequency is
+        greater than zero.
 
-        :param letter: One letter in the form of a string. The letter may be 
-        'A' to 'Z', 'a' to 'z' or '_' (blank). 
-        :return: True if the letter frequency was reduced, False otherwise.  
+        :param letter: One letter in the form of a string. The letter may be
+        'A' to 'Z', 'a' to 'z' or '_' (blank).
+        :return: True if the letter frequency was reduced, False otherwise.
         """
 
     def get_freq(self, letters: str) -> dict:
